@@ -1,0 +1,54 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Inputs</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .stack{ display:flex; flex-direction: column; gap: 14px; }
+  .row{ display:flex; gap:12px; align-items:flex-start; }
+  .field{ flex:1; display:flex; flex-direction:column; gap:6px; }
+  .lbl{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--nx-fg-3); }
+  .input{
+    background: var(--nx-bg-4); border: 1px solid var(--nx-line-1);
+    border-radius: 12px; padding: 14px 14px;
+    color: var(--nx-fg-1); font-family: var(--nx-font-ui); font-size: 15px;
+  }
+  .input.focus{ border-color: var(--nx-accent); box-shadow: 0 0 0 3px rgba(0,255,136,0.18); }
+  .input.error{ border-color: var(--nx-crit); }
+  .input.placeholder{ color: var(--nx-fg-3); }
+  .help{ font-family: var(--nx-font-ui); font-size: 12px; color: var(--nx-fg-3); }
+  .help.err{ color: var(--nx-crit); }
+  .toggle{ display:inline-flex; gap: 8px; align-items: center; }
+  .switch{ width: 44px; height: 24px; background: var(--nx-bg-4); border-radius: 999px; position: relative; border: 1px solid var(--nx-line-2); }
+  .switch.on{ background: var(--nx-accent); border-color: transparent; box-shadow: 0 0 14px rgba(0,255,136,0.5); }
+  .knob{ position:absolute; top: 2px; left: 2px; width: 18px; height: 18px; background: #fff; border-radius: 50%; transition: left 200ms; }
+  .switch.on .knob{ left: 22px; background: #001A0E; }
+</style></head>
+<body><div class="card">
+  <div class="stack">
+    <div class="row">
+      <div class="field">
+        <span class="lbl">E-posta</span>
+        <div class="input placeholder">eposta@kulup.com</div>
+        <span class="help">Default · empty</span>
+      </div>
+      <div class="field">
+        <span class="lbl">Şifre · focus</span>
+        <div class="input focus">••••••••</div>
+        <span class="help">2px accent ring</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <span class="lbl">Hata</span>
+        <div class="input error">eposta</div>
+        <span class="help err">Geçerli bir e-posta gir.</span>
+      </div>
+      <div class="field" style="justify-content: center;">
+        <span class="lbl">Bildirimler</span>
+        <div class="row" style="gap:18px; margin-top: 8px;">
+          <span class="toggle"><div class="switch on"><div class="knob"></div></div><span class="help" style="color:var(--nx-fg-1)">Açık</span></span>
+          <span class="toggle"><div class="switch"><div class="knob"></div></div><span class="help">Kapalı</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></body></html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:18px;background:#0B0B0B;color:#fff;font-family:var(--nx-font-ui);width:700px;box-sizing:border-box}
+  .lab{font-family:var(--nx-font-ui);font-weight:700;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#7A7A7A}
+  .row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
+  .tier{background:#141414;border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:6px}
+  .pill{display:inline-flex;align-items:center;gap:5px;padding:2px 7px;border-radius:999px;font-family:Manrope;font-weight:800;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;width:fit-content}
+  .dot{width:5px;height:5px;border-radius:999px}
+  .xp{font-family:'JetBrains Mono';font-size:10px;color:#fff}
+  .min{font-family:'JetBrains Mono';font-size:9px;color:#4A4A4A}
+</style></head><body>
+  <div class="lab">XP tiers (player progression)</div>
+  <div class="row">
+    <div class="tier"><span class="pill" style="background:rgba(255,255,255,0.04);border:1px solid #C28A4B40;color:#C28A4B"><span class="dot" style="background:#C28A4B"></span>BRONZE</span><span class="xp">0 – 999</span><span class="min">starter</span></div>
+    <div class="tier"><span class="pill" style="background:rgba(255,255,255,0.04);border:1px solid #D4D4D440;color:#D4D4D4"><span class="dot" style="background:#D4D4D4"></span>SILVER</span><span class="xp">1,000 – 2,499</span><span class="min">consistent</span></div>
+    <div class="tier"><span class="pill" style="background:rgba(255,255,255,0.04);border:1px solid #FFB80040;color:#FFB800"><span class="dot" style="background:#FFB800"></span>GOLD</span><span class="xp">2,500 – 4,999</span><span class="min">strong</span></div>
+    <div class="tier"><span class="pill" style="background:rgba(255,255,255,0.04);border:1px solid #00FF8840;color:#00FF88"><span class="dot" style="background:#00FF88"></span>ELITE</span><span class="xp">5,000 – 7,999</span><span class="min">academy top</span></div>
+    <div class="tier"><span class="pill" style="background:rgba(255,255,255,0.04);border:1px solid #B26BFF40;color:#B26BFF"><span class="dot" style="background:#B26BFF"></span>LEGEND</span><span class="xp">8,000+</span><span class="min">rare</span></div>
+  </div>
+
+  <div class="lab" style="margin-top:18px">OVR bands (overall rating)</div>
+  <div class="row" style="grid-template-columns:repeat(4,1fr)">
+    <div class="tier"><span style="font-family:Oswald;font-weight:700;font-size:24px;color:#fff">60–69</span><span class="lab" style="color:#B8B8B8">Beginner / Başlangıç</span></div>
+    <div class="tier"><span style="font-family:Oswald;font-weight:700;font-size:24px;color:#fff">70–79</span><span class="lab" style="color:#B8B8B8">Developing / Gelişen</span></div>
+    <div class="tier"><span style="font-family:Oswald;font-weight:700;font-size:24px;color:#fff">80–89</span><span class="lab" style="color:#B8B8B8">Advanced / İleri</span></div>
+    <div class="tier"><span style="font-family:Oswald;font-weight:700;font-size:24px;color:#00FF88">90+</span><span class="lab" style="color:#00FF88">Elite / Elit</span></div>
+  </div>
+</body></html>

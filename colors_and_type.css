@@ -1,0 +1,194 @@
+/* ============================================================
+   NEXT XI — Design Tokens
+   Premium football development platform. Dark, high-contrast,
+   electric. Mobile-first. Built for progression & competition.
+   ============================================================ */
+
+/* ---------- Web fonts ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root {
+  /* ============== COLOR · CANVAS / SURFACES ============== */
+  --nx-bg-0: #050505;        /* page void, behind app */
+  --nx-bg-1: #0B0B0B;        /* canvas (matches logo plate) */
+  --nx-bg-2: #141414;        /* card */
+  --nx-bg-3: #1C1C1C;        /* raised card / sheet */
+  --nx-bg-4: #242424;        /* input / chip */
+  --nx-bg-pitch: #0E1A12;    /* pitch-tinted dark green-black */
+
+  /* ============== COLOR · FOREGROUND ============== */
+  --nx-fg-1: #FFFFFF;        /* primary text, key numerals */
+  --nx-fg-2: #B8B8B8;        /* body / secondary */
+  --nx-fg-3: #7A7A7A;        /* meta / tertiary */
+  --nx-fg-4: #4A4A4A;        /* disabled, hairlines on dark */
+
+  /* ============== COLOR · BRAND / ACCENT ============== */
+  --nx-accent:        #00FF88;   /* electric pitch green — PRIMARY */
+  --nx-accent-hi:     #6BFFB4;   /* hover / highlight tint */
+  --nx-accent-lo:     #00C46A;   /* pressed / depressed state */
+  --nx-accent-ink:    #001A0E;   /* text on accent fills */
+  --nx-accent-glow:   rgba(0, 255, 136, 0.22);   /* RESERVED — reward / level-up only */
+  --nx-accent-soft:   rgba(0, 255, 136, 0.10);   /* default tint behind accent fills */
+
+  /* ============== COLOR · SEMANTIC / GAMIFY ============== */
+  --nx-gold:   #FFB800;   /* MVP, rare reward, trophy */
+  --nx-fire:   #FF5C2E;   /* streak, hot form */
+  --nx-crit:   #FF3B30;   /* red card, negative delta */
+  --nx-info:   #4F8DFF;   /* cool / data / ice */
+  --nx-purple: #B26BFF;   /* legendary tier */
+
+  /* Tier ramp (FIFA-card-inspired rarity) */
+  --nx-tier-bronze: #C28A4B;
+  --nx-tier-silver: #D4D4D4;
+  --nx-tier-gold:   #FFB800;
+  --nx-tier-elite:  #00FF88;
+  --nx-tier-legend: #B26BFF;
+
+  /* ============== COLOR · BORDERS / LINES ============== */
+  --nx-line-1: rgba(255,255,255,0.06);   /* card hairline */
+  --nx-line-2: rgba(255,255,255,0.10);   /* divider */
+  --nx-line-3: rgba(255,255,255,0.18);   /* focused input */
+  --nx-line-pitch: rgba(0,255,136,0.18); /* faint pitch lines */
+
+  /* ============== TYPOGRAPHY · FAMILIES ============== */
+  --nx-font-display: "Oswald", "Arial Narrow", sans-serif;        /* numerals, headlines */
+  --nx-font-ui:      "Manrope", system-ui, sans-serif;            /* body, UI */
+  --nx-font-mono:    "JetBrains Mono", ui-monospace, monospace;   /* IDs, codes */
+
+  /* ============== TYPOGRAPHY · SCALE ============== */
+  --nx-text-xs:   11px;
+  --nx-text-sm:   13px;
+  --nx-text-base: 15px;
+  --nx-text-md:   17px;
+  --nx-text-lg:   20px;
+  --nx-text-xl:   24px;
+  --nx-text-2xl:  32px;
+  --nx-text-3xl:  44px;
+  --nx-text-4xl:  64px;
+  --nx-text-stat: 88px;   /* hero stat / level / XP */
+
+  --nx-leading-tight: 1.05;
+  --nx-leading-snug:  1.2;
+  --nx-leading-body:  1.45;
+  --nx-track-display: 0.02em;
+  --nx-track-caps:    0.14em;   /* ALL-CAPS LABEL TRACKING */
+
+  /* ============== SPACING ============== */
+  --nx-s-1:  4px;
+  --nx-s-2:  8px;
+  --nx-s-3:  12px;
+  --nx-s-4:  16px;
+  --nx-s-5:  20px;
+  --nx-s-6:  24px;
+  --nx-s-8:  32px;
+  --nx-s-10: 40px;
+  --nx-s-14: 56px;
+  --nx-s-20: 80px;
+
+  /* ============== RADII ============== */
+  --nx-r-1: 4px;
+  --nx-r-2: 8px;
+  --nx-r-3: 12px;
+  --nx-r-4: 16px;
+  --nx-r-5: 24px;
+  --nx-r-pill: 999px;
+
+  /* ============== SHADOWS / GLOW ============== */
+  --nx-shadow-card:  0 1px 0 rgba(255,255,255,0.04) inset,
+                     0 12px 32px -16px rgba(0,0,0,0.85);
+  --nx-shadow-raise: 0 1px 0 rgba(255,255,255,0.05) inset,
+                     0 24px 60px -24px rgba(0,0,0,0.95);
+  --nx-shadow-glow:  0 0 0 1px var(--nx-accent),
+                     0 0 18px var(--nx-accent-glow);   /* USE SPARINGLY: rewards, level-up, live state */
+  --nx-shadow-press: 0 1px 0 rgba(0,0,0,0.6) inset;
+
+  /* ============== MOTION ============== */
+  --nx-ease-out:  cubic-bezier(0.22, 1, 0.36, 1);    /* primary out */
+  --nx-ease-snap: cubic-bezier(0.6, 0, 0.2, 1);      /* punchy */
+  --nx-ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --nx-dur-1: 120ms;   /* taps */
+  --nx-dur-2: 220ms;   /* hovers, micro */
+  --nx-dur-3: 380ms;   /* sheet, transitions */
+  --nx-dur-4: 700ms;   /* progress fills, level-up */
+}
+
+/* ============================================================
+   SEMANTIC TYPE STYLES
+   Apply to elements directly via class.
+   Display = condensed, sporty (Oswald). UI = Manrope.
+   ============================================================ */
+.nx-display-1{
+  font-family: var(--nx-font-display);
+  font-weight: 700; font-size: var(--nx-text-stat);
+  line-height: var(--nx-leading-tight);
+  letter-spacing: var(--nx-track-display);
+  color: var(--nx-fg-1);
+  font-feature-settings: "tnum" 1;
+}
+.nx-display-2{
+  font-family: var(--nx-font-display);
+  font-weight: 700; font-size: var(--nx-text-4xl);
+  line-height: var(--nx-leading-tight);
+  letter-spacing: var(--nx-track-display);
+  color: var(--nx-fg-1);
+  text-transform: uppercase;
+}
+.nx-h1{
+  font-family: var(--nx-font-display);
+  font-weight: 600; font-size: var(--nx-text-3xl);
+  line-height: var(--nx-leading-snug);
+  text-transform: uppercase;
+  letter-spacing: var(--nx-track-display);
+  color: var(--nx-fg-1);
+}
+.nx-h2{
+  font-family: var(--nx-font-display);
+  font-weight: 600; font-size: var(--nx-text-2xl);
+  line-height: var(--nx-leading-snug);
+  text-transform: uppercase;
+  color: var(--nx-fg-1);
+}
+.nx-h3{
+  font-family: var(--nx-font-ui);
+  font-weight: 700; font-size: var(--nx-text-xl);
+  line-height: var(--nx-leading-snug);
+  color: var(--nx-fg-1);
+}
+.nx-body{
+  font-family: var(--nx-font-ui);
+  font-weight: 400; font-size: var(--nx-text-base);
+  line-height: var(--nx-leading-body);
+  color: var(--nx-fg-2);
+}
+.nx-body-strong{
+  font-family: var(--nx-font-ui);
+  font-weight: 600; font-size: var(--nx-text-base);
+  color: var(--nx-fg-1);
+}
+.nx-meta{
+  font-family: var(--nx-font-ui);
+  font-weight: 500; font-size: var(--nx-text-sm);
+  color: var(--nx-fg-3);
+}
+.nx-label{    /* small-caps tracked label, used everywhere */
+  font-family: var(--nx-font-ui);
+  font-weight: 700; font-size: var(--nx-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--nx-track-caps);
+  color: var(--nx-fg-3);
+}
+.nx-stat{    /* hero numerals — level, XP, OVR, etc */
+  font-family: var(--nx-font-display);
+  font-weight: 700;
+  font-size: var(--nx-text-stat);
+  line-height: 0.95;
+  letter-spacing: 0;
+  color: var(--nx-fg-1);
+  font-feature-settings: "tnum" 1;
+}
+.nx-mono{
+  font-family: var(--nx-font-mono);
+  font-size: var(--nx-text-sm);
+  letter-spacing: 0;
+  color: var(--nx-fg-2);
+}

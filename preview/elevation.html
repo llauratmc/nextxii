@@ -1,0 +1,27 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Elevation & glow</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .box{
+    height: 132px; border-radius: 14px;
+    background: var(--nx-bg-2);
+    border: 1px solid var(--nx-line-1);
+    display:flex; flex-direction: column; justify-content: space-between;
+    padding: 12px;
+  }
+  .e1{ box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 12px 32px -16px rgba(0,0,0,0.85); }
+  .e2{ box-shadow: 0 1px 0 rgba(255,255,255,0.05) inset, 0 24px 60px -24px rgba(0,0,0,0.95); background: var(--nx-bg-3); }
+  .glow{ box-shadow: 0 0 0 1px var(--nx-accent), 0 0 24px rgba(0,255,136,0.45); border-color: transparent; background: var(--nx-bg-2); }
+  .press{ box-shadow: 0 1px 0 rgba(0,0,0,0.6) inset; background: var(--nx-bg-3); transform: translateY(1px); }
+  .name{ font-family: var(--nx-font-display); font-size: 18px; font-weight: 600; text-transform: uppercase; color: var(--nx-fg-1); }
+  .lbl{ font-family: var(--nx-font-mono); font-size: 11px; color: var(--nx-fg-3); line-height: 1.4; }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="box e1"><span class="name">Card</span><span class="lbl">--nx-shadow-card<br>inset hi + drop</span></div>
+    <div class="box e2"><span class="name">Raised</span><span class="lbl">--nx-shadow-raise<br>sheet / modal</span></div>
+    <div class="box glow"><span class="name" style="color:var(--nx-accent)">Glow</span><span class="lbl">--nx-shadow-glow<br>active CTA only</span></div>
+    <div class="box press"><span class="name">Press</span><span class="lbl">--nx-shadow-press<br>tap + 0.97 scale</span></div>
+  </div>
+</div></body></html>

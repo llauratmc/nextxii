@@ -1,0 +1,33 @@
+/* Shared frame for every Design System preview card.
+   Cards target 700×<varies> and sit in the review pane. */
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0;
+  background: var(--nx-bg-1);
+  color: var(--nx-fg-1);
+  font-family: var(--nx-font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.card{
+  width: 700px;
+  box-sizing: border-box;
+  padding: 24px;
+  background: var(--nx-bg-1);
+  position: relative;
+  overflow: hidden;
+}
+.card::before{
+  /* faint pitch-line texture, very subtle */
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,255,136,0.04), transparent 40%),
+    repeating-linear-gradient(90deg, transparent 0 79px, rgba(255,255,255,0.015) 79px 80px);
+  pointer-events: none;
+}
+.card > *{ position: relative; }
+.row{ display:flex; gap: 12px; align-items:center; }
+.col{ display:flex; flex-direction: column; gap: 8px; }
+.grid{ display:grid; gap: 12px; }

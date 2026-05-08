@@ -1,0 +1,35 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Labels & meta</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .stack{ display:flex; flex-direction: column; gap: 16px; }
+  .lbl{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--nx-fg-3); }
+  .lbl-on{ color: var(--nx-accent); }
+  .meta{ font-family: var(--nx-font-ui); font-weight: 500; font-size: 13px; color: var(--nx-fg-3); }
+  .mono{ font-family: var(--nx-font-mono); font-size: 13px; color: var(--nx-fg-2); }
+  .row{ display:flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .pip{ height: 6px; width: 6px; border-radius: 999px; background: var(--nx-fg-3); display:inline-block; vertical-align: middle; margin: 0 8px; }
+  .anno{ font-family: var(--nx-font-mono); font-size: 10px; color: var(--nx-fg-4); }
+</style></head>
+<body><div class="card">
+  <div class="stack">
+    <div class="row">
+      <span class="lbl">Passing</span><span class="pip"></span>
+      <span class="lbl">Weekly form</span><span class="pip"></span>
+      <span class="lbl">Streak · 6</span><span class="pip"></span>
+      <span class="lbl lbl-on">● Live now</span>
+    </div>
+    <div class="row">
+      <span class="meta">Antrenman · 14 May · 18:30</span><span class="pip"></span>
+      <span class="meta">Koç: Ahmet Y.</span><span class="pip"></span>
+      <span class="meta">U14 takımı</span>
+    </div>
+    <div class="row">
+      <span class="mono">SESSION-2025-05-14-A03</span><span class="pip"></span>
+      <span class="mono">+120 XP</span>
+    </div>
+    <div class="row">
+      <span class="anno">.nx-label · 11 / 700 · UPPER · 0.14em track</span>
+    </div>
+  </div>
+</div></body></html>

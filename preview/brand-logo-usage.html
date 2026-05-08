@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Logo on dark</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid{ grid-template-columns: 1fr 1fr; gap: 14px; }
+  .swatch{
+    height: 168px; border-radius: 14px; padding: 16px;
+    display:flex; flex-direction: column; justify-content: space-between;
+    border: 1px solid var(--nx-line-1);
+    position: relative; overflow:hidden;
+  }
+  .swatch.bg-canvas{ background: var(--nx-bg-1); }
+  .swatch.bg-pitch{ background:
+    radial-gradient(120% 80% at 50% 100%, rgba(0,255,136,0.12), transparent 60%),
+    var(--nx-bg-pitch);
+  }
+  .swatch.bg-accent{ background: var(--nx-accent); }
+  .swatch.bg-accent .nx-label{ color: rgba(0,26,14,0.6); }
+  .mark{ font-family: var(--nx-font-display); font-weight: 700; letter-spacing: 0.04em; }
+  .mark .next{ color: var(--nx-fg-1); font-size: 28px; font-weight: 500; }
+  .mark .xi{ color: var(--nx-accent); font-size: 40px; margin-left: 8px; }
+  .swatch.bg-accent .mark .next{ color: #001A0E; }
+  .swatch.bg-accent .mark .xi{ color: #001A0E; }
+  .nx-label{ color: var(--nx-fg-3); }
+  .swatch.bg-canvas::after{
+    content:""; position:absolute; inset: 50% 16px auto 16px; height: 1px;
+    background: var(--nx-line-pitch);
+  }
+</style></head>
+<body><div class="card">
+  <div class="grid">
+    <div class="swatch bg-canvas">
+      <span class="nx-label">On canvas · default</span>
+      <div class="mark"><span class="next">NEXT</span><span class="xi">XI</span></div>
+    </div>
+    <div class="swatch bg-pitch">
+      <span class="nx-label">On pitch tint · OK</span>
+      <div class="mark"><span class="next">NEXT</span><span class="xi">XI</span></div>
+    </div>
+    <div class="swatch bg-accent">
+      <span class="nx-label">On accent · inverted, no glow</span>
+      <div class="mark"><span class="next">NEXT</span><span class="xi">XI</span></div>
+    </div>
+    <div class="swatch bg-canvas" style="border-color: var(--nx-crit); opacity: 0.95;">
+      <span class="nx-label" style="color: var(--nx-crit)">Avoid · color washes, grunge</span>
+      <div class="mark" style="filter: blur(0.4px) saturate(0.5);"><span class="next">NEXT</span><span class="xi" style="color:#888;">XI</span></div>
+    </div>
+  </div>
+</div></body></html>

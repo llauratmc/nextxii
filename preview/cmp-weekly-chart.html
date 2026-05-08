@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Weekly form</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .frame{ background: var(--nx-bg-2); border:1px solid var(--nx-line-1); border-radius: 16px; padding: 16px 18px; }
+  .head{ display:flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;}
+  .head h{ font-family: var(--nx-font-display); font-weight: 600; text-transform: uppercase; font-size: 16px; letter-spacing: 0.06em; color: var(--nx-fg-1); }
+  .delta{ font-family: var(--nx-font-display); font-weight: 700; font-size: 24px; color: var(--nx-accent); text-shadow: 0 0 14px rgba(0,255,136,0.45); }
+  .delta .l{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 10px; color: var(--nx-fg-3); letter-spacing: 0.14em; margin-right: 6px; vertical-align: middle; }
+  .chart{ height: 140px; display:grid; grid-template-columns: repeat(7, 1fr); gap: 8px; align-items: flex-end; padding: 8px 0; border-bottom: 1px solid var(--nx-line-pitch); }
+  .day{ display:flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
+  .bar{ width: 100%; max-width: 36px; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, var(--nx-accent), var(--nx-accent-lo)); box-shadow: 0 0 12px rgba(0,255,136,0.35); }
+  .bar.dim{ background: linear-gradient(180deg, #2a2a2a, #1a1a1a); box-shadow:none; }
+  .bar.high{ background: linear-gradient(180deg, #FFB800, #B07700); box-shadow: 0 0 14px rgba(255,184,0,0.45); }
+  .lbl{ font-family: var(--nx-font-ui); font-size: 10px; color: var(--nx-fg-3); letter-spacing: 0.08em; text-transform: uppercase; }
+  .axis{ display:flex; justify-content: space-between; padding-top: 6px; }
+</style></head>
+<body><div class="card">
+  <div class="frame">
+    <div class="head">
+      <h>Bu haftaki form</h>
+      <span class="delta"><span class="l">vs son hafta</span>▲ +12%</span>
+    </div>
+    <div class="chart">
+      <div class="day"><div class="bar dim" style="height: 18%"></div></div>
+      <div class="day"><div class="bar" style="height: 55%"></div></div>
+      <div class="day"><div class="bar dim" style="height: 22%"></div></div>
+      <div class="day"><div class="bar" style="height: 70%"></div></div>
+      <div class="day"><div class="bar dim" style="height: 28%"></div></div>
+      <div class="day"><div class="bar high" style="height: 95%"></div></div>
+      <div class="day"><div class="bar" style="height: 60%"></div></div>
+    </div>
+    <div class="axis">
+      <span class="lbl">Pzt</span><span class="lbl">Sal</span><span class="lbl">Çar</span><span class="lbl">Per</span><span class="lbl">Cum</span><span class="lbl" style="color: #FFB800">Cmt · maç</span><span class="lbl">Paz</span>
+    </div>
+  </div>
+</div></body></html>

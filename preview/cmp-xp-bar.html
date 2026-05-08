@@ -1,0 +1,47 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>XP & Level</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .frame{
+    background: var(--nx-bg-2); border:1px solid var(--nx-line-1);
+    border-radius: 16px; padding: 18px 20px;
+    display:flex; flex-direction: column; gap: 14px;
+  }
+  .top{ display:flex; align-items: flex-end; justify-content: space-between; }
+  .lvl-block{ display:flex; align-items: baseline; gap: 10px; }
+  .lvl-l{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nx-fg-3); }
+  .lvl{ font-family: var(--nx-font-display); font-weight: 700; font-size: 64px; line-height: 0.9; color: var(--nx-fg-1); font-feature-settings:"tnum" 1;}
+  .lvl .accent{ color: var(--nx-accent); text-shadow: 0 0 24px rgba(0,255,136,0.45); }
+  .nextxp{ font-family: var(--nx-font-mono); font-size: 12px; color: var(--nx-fg-3); }
+  .nextxp b{ color: var(--nx-fg-1); font-family: var(--nx-font-display); font-weight: 700; font-size: 18px; }
+
+  .bar{ height: 14px; background: var(--nx-bg-4); border-radius: 999px; overflow: hidden; position: relative; border:1px solid var(--nx-line-1);}
+  .fill{ height: 100%; background: linear-gradient(90deg, var(--nx-accent-lo), var(--nx-accent)); box-shadow: 0 0 16px rgba(0,255,136,0.55); border-radius: 999px; width: 64%; position: relative; }
+  .fill::after{ content:""; position:absolute; right: 0; top:0; bottom:0; width: 2px; background: rgba(255,255,255,0.85); }
+  .ticks{ position:absolute; inset: 0; display: grid; grid-template-columns: repeat(10, 1fr); pointer-events:none;}
+  .ticks div{ border-right: 1px solid rgba(255,255,255,0.06); }
+  .ticks div:last-child{ border-right: none; }
+
+  .gain{ display:flex; gap: 8px; align-items: center; font-family: var(--nx-font-ui); font-size: 13px; color: var(--nx-fg-2); }
+  .gain b{ font-family: var(--nx-font-display); font-weight: 700; font-size: 24px; color: var(--nx-accent); text-shadow: 0 0 16px rgba(0,255,136,0.5); }
+  .meta{ font-family: var(--nx-font-mono); font-size: 11px; color: var(--nx-fg-3); }
+</style></head>
+<body><div class="card">
+  <div class="frame">
+    <div class="top">
+      <div class="lvl-block">
+        <span class="lvl-l">Seviye</span>
+        <span class="lvl">14<span class="accent">.</span></span>
+      </div>
+      <span class="nextxp">Sonraki seviyeye <b>180</b> XP</span>
+    </div>
+    <div class="bar">
+      <div class="fill"></div>
+      <div class="ticks"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="row" style="justify-content: space-between; align-items:center;">
+      <span class="gain"><b>+120 XP</b><span style="color: var(--nx-fg-3)">bu antrenmanda</span></span>
+      <span class="meta">Level up @ 1500 XP · 64% complete</span>
+    </div>
+  </div>
+</div></body></html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<title>NEXT XI · App UI Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  html, body { margin: 0; height: 100%; background: #050505; }
+  body {
+    font-family: var(--nx-font-ui); color: var(--nx-fg-1);
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    overflow: hidden;
+  }
+  #root { width: 100vw; min-height: 100vh; }
+  .nxt-scroll{ overflow-y: auto; overflow-x: hidden; height: 100%; scrollbar-width: none; }
+  .nxt-scroll::-webkit-scrollbar{ display: none; }
+  @keyframes pop { 0%{transform: translateY(20px) scale(0.9); opacity: 0} 60%{transform: translateY(-4px) scale(1.04); opacity:1} 100%{transform: translateY(0) scale(1); opacity:1} }
+  .pop{ animation: pop 600ms cubic-bezier(0.22,1,0.36,1); }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="components.jsx"></script>
+<script type="text/babel" src="components-2.jsx"></script>
+<script type="text/babel" src="screens.jsx"></script>
+<script type="text/babel" src="screens-v2.jsx"></script>
+</head><body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+function App(){
+  const [lang, setLang] = useState('tr');
+  const [tab, setTab] = useState('home');
+  const [route, setRoute] = useState('onboarding');  // onboarding | null | 'session'
+  const [role, setRole] = useState('player');        // player | parent
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [toast, setToast] = useState(null);
+
+  useEffect(() => { document.documentElement.lang = lang; }, [lang]);
+
+  // Onboarding gate
+  if (route === 'onboarding') {
+    return (
+      <IOSDevice width={402} height={874} dark>
+        <div style={{ background:'#0B0B0B', height:'100%' }}>
+          <OnboardingScreen current={lang} onPick={(code) => {
+            if (code === lang) setRoute(null);
+            else setLang(code);
+          }}/>
+        </div>
+      </IOSDevice>
+    );
+  }
+
+  const startSession = () => setRoute('session');
+  const closeSession = () => setRoute(null);
+  const completeDrill = () => { setToast({ xp: 38 }); setTimeout(() => setToast(null), 2200); };
+
+  let body;
+  if (route === 'session') {
+    body = <SessionDetailScreen lang={lang} onClose={closeSession} onComplete={completeDrill}/>;
+  } else if (role === 'parent') {
+    body = <ParentDashboardScreen lang={lang}/>;
+  } else if (tab === 'home') {
+    body = <HomeScreenV2 lang={lang} onStart={startSession} onTab={setTab}/>;
+  } else if (tab === 'training') {
+    body = <TrainingScreen lang={lang} onSession={startSession}/>;
+  } else if (tab === 'achievements') {
+    body = <AchievementsScreen lang={lang}/>;
+  } else {
+    body = <ProfileScreen lang={lang}/>;
+  }
+
+  // Custom top bar with role + settings
+  const TopBarV2 = (
+    <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between',
+      padding:'12px 20px 8px', borderBottom:'1px solid rgba(255,255,255,0.04)' }}>
+      <div style={{ display:'flex', alignItems:'center', gap: 8 }}>
+        <div style={{ width: 26, height: 26, borderRadius: 7,
+          background:'#0B0B0B', border:'1px solid rgba(0,255,136,0.30)',
+          display:'flex', alignItems:'center', justifyContent:'center' }}>
+          <span style={{ fontFamily:'Oswald', fontWeight: 700, fontSize: 11, color:'#00FF88' }}>XI</span>
+        </div>
+        <span style={{ fontFamily:'Manrope', fontWeight: 800, fontSize: 11,
+          letterSpacing:'0.18em', textTransform:'uppercase', color:'#fff' }}>NEXT XI</span>
+        <span style={{ marginLeft: 8, fontFamily:'JetBrains Mono', fontSize: 10,
+          color: role==='parent' ? '#FFB800' : '#00FF88',
+          padding:'2px 7px', borderRadius: 999,
+          border:`1px solid ${role==='parent' ? 'rgba(255,184,0,0.30)' : 'rgba(0,255,136,0.30)'}`,
+          background: role==='parent' ? 'rgba(255,184,0,0.06)' : 'rgba(0,255,136,0.06)' }}>
+          {role==='parent' ? (lang==='tr'?'VELİ':'PARENT') : (lang==='tr'?'OYUNCU':'PLAYER')}
+        </span>
+      </div>
+      <button onClick={() => setSettingsOpen(true)} style={{
+        width: 32, height: 32, borderRadius: 999, cursor:'pointer',
+        background:'#1C1C1C', border:'1px solid rgba(255,255,255,0.06)',
+        color:'#fff', display:'flex', alignItems:'center', justifyContent:'center' }}>
+        <Ico name="cog" size={16}/>
+      </button>
+    </div>
+  );
+
+  return (
+    <IOSDevice width={402} height={874} dark>
+      <div style={{ background:'#0B0B0B', height:'100%', display:'flex', flexDirection:'column', position:'relative' }}>
+        {!route && TopBarV2}
+        <div className="nxt-scroll" style={{ flex: 1 }}>
+          {body}
+        </div>
+        {!route && role==='player' && <BottomNav tab={tab} setTab={setTab}/>}
+        {!route && role==='parent' && (
+          <div style={{ padding:'10px 20px 18px', borderTop:'1px solid rgba(255,255,255,0.06)',
+            background:'#0B0B0B', display:'flex', justifyContent:'center' }}>
+            <span style={{ fontFamily:'Manrope', fontWeight: 700, fontSize: 10,
+              letterSpacing:'0.16em', textTransform:'uppercase', color:'#7A7A7A' }}>
+              {lang==='tr' ? 'Veli görünümü' : 'Parent view'}
+            </span>
+          </div>
+        )}
+
+        {toast && (
+          <div className="pop" style={{
+            position:'absolute', left: 16, right: 16, bottom: 110,
+            background:'rgba(11,11,11,0.92)', backdropFilter:'blur(18px) saturate(140%)',
+            border:'1px solid rgba(0,255,136,0.40)', borderRadius: 14, padding: 14,
+            boxShadow:'0 0 0 1px rgba(0,255,136,0.14), 0 24px 60px -24px rgba(0,0,0,0.95)',
+            display:'flex', alignItems:'center', gap: 12
+          }}>
+            <div style={{ width: 38, height: 38, borderRadius: 12, background:'rgba(0,255,136,0.10)',
+              color:'#00FF88', display:'flex', alignItems:'center', justifyContent:'center',
+              border:'1px solid rgba(0,255,136,0.30)' }}>
+              <Ico name="check" size={22}/>
+            </div>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontFamily:'Manrope', fontWeight:700, fontSize: 13, color:'#fff' }}>
+                {lang==='tr' ? 'Drill tamamlandı' : 'Drill complete'}
+              </div>
+              <Label color="#7A7A7A">{lang==='tr' ? 'Antrenmana devam' : 'Keep going'}</Label>
+            </div>
+            <span style={{ fontFamily:'Oswald', fontWeight:700, fontSize: 28, color:'#00FF88' }}>+{toast.xp}<span style={{ fontSize: 11, marginLeft: 2, color:'#B8B8B8' }}>XP</span></span>
+          </div>
+        )}
+
+        <SettingsSheet open={settingsOpen} onClose={() => setSettingsOpen(false)}
+          lang={lang} setLang={setLang} role={role} setRole={setRole}/>
+      </div>
+    </IOSDevice>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body></html>

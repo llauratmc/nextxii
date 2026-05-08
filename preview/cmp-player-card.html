@@ -1,0 +1,94 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Player card</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row{ display:flex; gap: 18px; align-items: stretch; }
+  .pcard{
+    width: 220px; min-height: 320px;
+    border-radius: 18px; padding: 16px 18px;
+    background:
+      radial-gradient(120% 60% at 50% -20%, rgba(0,255,136,0.35), transparent 55%),
+      linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+    border: 1px solid rgba(0,255,136,0.35);
+    box-shadow: 0 0 0 1px rgba(0,255,136,0.12), 0 24px 60px -24px rgba(0,0,0,0.95);
+    color: #fff; display: flex; flex-direction: column; gap: 10px;
+    position: relative; overflow: hidden;
+  }
+  .pcard.gold{
+    background:
+      radial-gradient(120% 60% at 50% -20%, rgba(255,184,0,0.35), transparent 55%),
+      linear-gradient(180deg, #1a1612 0%, #0d0d0d 100%);
+    border-color: rgba(255,184,0,0.5);
+    box-shadow: 0 0 0 1px rgba(255,184,0,0.18), 0 24px 60px -24px rgba(0,0,0,0.95);
+  }
+  .pcard.legend{
+    background:
+      radial-gradient(120% 60% at 50% -20%, rgba(178,107,255,0.4), transparent 55%),
+      linear-gradient(180deg, #1a1422 0%, #0d0d0d 100%);
+    border-color: rgba(178,107,255,0.5);
+    box-shadow: 0 0 0 1px rgba(178,107,255,0.2), 0 24px 60px -24px rgba(0,0,0,0.95);
+  }
+  .top{ display:flex; justify-content: space-between; align-items: flex-start; }
+  .ovr{ font-family: var(--nx-font-display); font-weight: 700; font-size: 56px; line-height: 1; color: var(--nx-accent); text-shadow: 0 0 24px rgba(0,255,136,0.5); }
+  .gold .ovr{ color: #FFB800; text-shadow: 0 0 24px rgba(255,184,0,0.5); }
+  .legend .ovr{ color: #D4B0FF; text-shadow: 0 0 24px rgba(178,107,255,0.5); }
+  .pos{ font-family: var(--nx-font-display); font-weight: 700; font-size: 18px; letter-spacing: 0.06em; color: rgba(255,255,255,0.85); text-align: right; }
+  .photo{
+    width: 100%; aspect-ratio: 1; border-radius: 12px;
+    background:
+      radial-gradient(60% 60% at 50% 30%, #2c2c2c, transparent 70%),
+      linear-gradient(180deg, #1f1f1f, #111);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--nx-font-display); font-size: 56px; color: #fff; font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .name{ font-family: var(--nx-font-display); font-weight: 700; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; text-align: center; }
+  .stats{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px 8px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .stats .v{ font-family: var(--nx-font-display); font-weight: 700; font-size: 16px; color: #fff; }
+  .stats .v.up{ color: var(--nx-accent); }
+  .stats .l{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 9px; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); }
+  .stats div{ display:flex; gap: 4px; align-items: baseline; }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="pcard">
+      <div class="top"><span class="ovr">82</span><span class="pos">CAM<br><span style="font-size: 10px; opacity: 0.5; letter-spacing: 0.14em;">U16</span></span></div>
+      <div class="photo">EY</div>
+      <div class="name">E. Yıldız</div>
+      <div class="stats">
+        <div><span class="v up">79</span><span class="l">PAS</span></div>
+        <div><span class="v">81</span><span class="l">ŞUT</span></div>
+        <div><span class="v">85</span><span class="l">HIZ</span></div>
+        <div><span class="v">76</span><span class="l">SAV</span></div>
+        <div><span class="v">88</span><span class="l">DRİ</span></div>
+        <div><span class="v">74</span><span class="l">FİZ</span></div>
+      </div>
+    </div>
+    <div class="pcard gold">
+      <div class="top"><span class="ovr">76</span><span class="pos">ST<br><span style="font-size: 10px; opacity: 0.5; letter-spacing: 0.14em;">U14</span></span></div>
+      <div class="photo">MK</div>
+      <div class="name">M. Kaya</div>
+      <div class="stats">
+        <div><span class="v">68</span><span class="l">PAS</span></div>
+        <div><span class="v up">82</span><span class="l">ŞUT</span></div>
+        <div><span class="v">80</span><span class="l">HIZ</span></div>
+        <div><span class="v">62</span><span class="l">SAV</span></div>
+        <div><span class="v">74</span><span class="l">DRİ</span></div>
+        <div><span class="v">71</span><span class="l">FİZ</span></div>
+      </div>
+    </div>
+    <div class="pcard legend">
+      <div class="top"><span class="ovr">91</span><span class="pos">CB<br><span style="font-size: 10px; opacity: 0.5; letter-spacing: 0.14em;">U18</span></span></div>
+      <div class="photo">AT</div>
+      <div class="name">A. Türk</div>
+      <div class="stats">
+        <div><span class="v">82</span><span class="l">PAS</span></div>
+        <div><span class="v">62</span><span class="l">ŞUT</span></div>
+        <div><span class="v">78</span><span class="l">HIZ</span></div>
+        <div><span class="v up">94</span><span class="l">SAV</span></div>
+        <div><span class="v">68</span><span class="l">DRİ</span></div>
+        <div><span class="v">90</span><span class="l">FİZ</span></div>
+      </div>
+    </div>
+  </div>
+</div></body></html>

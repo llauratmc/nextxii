@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Display & numerals</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row{ display:flex; gap: 28px; align-items: flex-end; padding: 8px 0 14px; }
+  .stat{ font-family: var(--nx-font-display); font-weight: 700; line-height: 0.95; color: var(--nx-fg-1); font-feature-settings:"tnum" 1; }
+  .stat .accent{ color: var(--nx-accent); }
+  .stat-88{ font-size: 88px; }
+  .stat-64{ font-size: 64px; }
+  .stat-44{ font-size: 44px; }
+  .col-meta{ display:flex; flex-direction: column; gap: 4px; }
+  .lbl{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--nx-fg-3); }
+  .meta{ font-family: var(--nx-font-mono); font-size: 11px; color: var(--nx-fg-3); }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="col-meta">
+      <span class="lbl">Hero stat · 88 / Oswald 700</span>
+      <span class="stat stat-88">82<span class="accent">.</span></span>
+      <span class="meta">.nx-stat — OVR, level, weekly XP</span>
+    </div>
+    <div class="col-meta">
+      <span class="lbl">Display 1 · 64</span>
+      <span class="stat stat-64">+120</span>
+      <span class="meta">.nx-display-1</span>
+    </div>
+    <div class="col-meta">
+      <span class="lbl">Display 2 · 44</span>
+      <span class="stat stat-44">LV 14</span>
+      <span class="meta">.nx-display-2</span>
+    </div>
+  </div>
+</div></body></html>

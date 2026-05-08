@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Streak & reward</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row{ display:grid; grid-template-columns: 1.1fr 1fr; gap: 12px; }
+  .frame{ border-radius: 16px; padding: 16px; height: 200px; display:flex; flex-direction: column; gap: 10px; position: relative; overflow: hidden; }
+  .streak{
+    background:
+      radial-gradient(120% 80% at 0% 100%, rgba(255,92,46,0.45), transparent 55%),
+      var(--nx-bg-2);
+    border: 1px solid rgba(255,92,46,0.45);
+  }
+  .reward{
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgba(0,255,136,0.35), transparent 55%),
+      var(--nx-bg-2);
+    border: 1px solid rgba(0,255,136,0.4);
+    box-shadow: 0 0 0 1px rgba(0,255,136,0.12);
+  }
+  .lbl{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nx-fg-3); }
+  .big{ font-family: var(--nx-font-display); font-weight: 700; font-size: 64px; line-height: 0.9; color: var(--nx-fg-1); }
+  .big.fire{ color: var(--nx-fire); text-shadow: 0 0 24px rgba(255,92,46,0.55); }
+  .big.acc{ color: var(--nx-accent); text-shadow: 0 0 24px rgba(0,255,136,0.55); }
+  .head{ font-family: var(--nx-font-display); font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--nx-fg-1); }
+  .desc{ font-family: var(--nx-font-ui); font-size: 12px; color: var(--nx-fg-2); line-height: 1.4; }
+  .pips{ display:flex; gap: 4px; margin-top: auto; }
+  .pip{ flex:1; height: 6px; border-radius: 999px; background: var(--nx-bg-4); }
+  .pip.on{ background: var(--nx-fire); box-shadow: 0 0 8px rgba(255,92,46,0.5); }
+  .toast-meta{ display:flex; gap: 8px; align-items: center; margin-top: auto; }
+  .pill{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 11px; padding: 4px 10px; border-radius: 999px; background: rgba(0,255,136,0.18); color: var(--nx-accent); letter-spacing: 0.1em; text-transform: uppercase; }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="frame streak">
+      <span class="lbl">Streak · seri</span>
+      <div class="row" style="display:flex; align-items: baseline; gap: 12px;">
+        <span class="big fire">6</span>
+        <span class="head">gün üst üste</span>
+      </div>
+      <p class="desc">Bugün de antrenmana gel, serini koru. 7 günde <b style="color: var(--nx-fire)">+250 XP</b> bonus.</p>
+      <div class="pips">
+        <span class="pip on"></span><span class="pip on"></span><span class="pip on"></span>
+        <span class="pip on"></span><span class="pip on"></span><span class="pip on"></span>
+        <span class="pip"></span>
+      </div>
+    </div>
+    <div class="frame reward">
+      <span class="lbl">Yeni başarım</span>
+      <span class="head">Hat Trick kilidi açıldı</span>
+      <span class="big acc">+250<span style="font-size: 24px; color: var(--nx-fg-2); margin-left: 8px;">XP</span></span>
+      <p class="desc">Tek maçta 3 gol attın. Gold tier'a çok yakınsın.</p>
+      <div class="toast-meta">
+        <span class="pill">Unlocked</span>
+        <span class="lbl" style="color: var(--nx-fg-2)">12 May · 19:42</span>
+      </div>
+    </div>
+  </div>
+</div></body></html>

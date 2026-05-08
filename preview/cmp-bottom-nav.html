@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Bottom navigation</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .frame{
+    background: var(--nx-bg-1); border:1px solid var(--nx-line-1);
+    border-top: 1px solid var(--nx-line-2); border-radius: 16px; padding: 10px 8px 14px;
+    box-shadow: 0 -12px 32px -16px rgba(0,0,0,0.85);
+  }
+  .row{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+  .item{ display:flex; flex-direction: column; align-items:center; gap: 4px; padding: 8px 4px; border-radius: 12px; cursor: pointer; }
+  .ico{ width: 26px; height: 26px; color: var(--nx-fg-3); }
+  .lbl{ font-family: var(--nx-font-ui); font-weight: 600; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nx-fg-3); }
+  .item.on .ico{ color: var(--nx-accent); filter: drop-shadow(0 0 8px rgba(0,255,136,0.6)); }
+  .item.on .lbl{ color: var(--nx-fg-1); }
+  .item.on{ background: rgba(0,255,136,0.08); }
+  .badge{ position: relative; }
+  .badge::after{ content: ""; position:absolute; top: -2px; right: -4px; width: 8px; height: 8px; background: var(--nx-fire); border-radius: 50%; box-shadow: 0 0 10px rgba(255,92,46,0.6); }
+</style></head>
+<body><div class="card">
+  <div class="frame">
+    <div class="row">
+      <div class="item on">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1v-9Z"/></svg>
+        <span class="lbl">Ana sayfa</span>
+      </div>
+      <div class="item">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg>
+        <span class="lbl">Antrenman</span>
+      </div>
+      <div class="item badge">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v4a7 7 0 0 1-14 0V4ZM9 18h6v3H9zM12 15v3"/></svg>
+        <span class="lbl">Başarımlar</span>
+      </div>
+      <div class="item">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <span class="lbl">Profil</span>
+      </div>
+    </div>
+  </div>
+</div></body></html>

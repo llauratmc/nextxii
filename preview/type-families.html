@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Type families</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .fam{
+    background: var(--nx-bg-2); border: 1px solid var(--nx-line-1);
+    border-radius: 12px; padding: 14px;
+    display:flex; flex-direction:column; gap: 6px; height: 168px;
+  }
+  .specimen{ font-size: 56px; line-height: 1; color: var(--nx-fg-1); }
+  .specimen.osw{ font-family: var(--nx-font-display); font-weight: 700; letter-spacing: 0.02em; }
+  .specimen.man{ font-family: var(--nx-font-ui); font-weight: 700; }
+  .specimen.mono{ font-family: var(--nx-font-mono); font-weight: 600; font-size: 40px; }
+  .name{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 13px; color: var(--nx-fg-1); }
+  .role{ font-family: var(--nx-font-ui); font-size: 11px; color: var(--nx-fg-3); }
+  .charset{ font-family: inherit; font-size: 14px; color: var(--nx-fg-2); margin-top: auto; }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="fam">
+      <span class="specimen osw">Aa Şç</span>
+      <span class="name">Oswald · display</span>
+      <span class="role">Numerals · headlines · ALL CAPS</span>
+      <span class="charset" style="font-family:'Oswald'">82 · LV 14 · OVR</span>
+    </div>
+    <div class="fam">
+      <span class="specimen man">Aa Şç</span>
+      <span class="name">Manrope · UI</span>
+      <span class="role">Body · buttons · labels</span>
+      <span class="charset" style="font-family:'Manrope'">Bugünkü hedef ı ğ ş ç ö ü</span>
+    </div>
+    <div class="fam">
+      <span class="specimen mono">Aa</span>
+      <span class="name">JetBrains Mono</span>
+      <span class="role">IDs · codes · scout data</span>
+      <span class="charset" style="font-family:'JetBrains Mono'">SESSION-A03 · +120</span>
+    </div>
+  </div>
+</div></body></html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Tier ramp</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row{ display:grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .tier{
+    height: 168px; border-radius: 14px; padding: 12px;
+    display:flex; flex-direction: column; justify-content: space-between;
+    background: var(--nx-bg-2); border: 1px solid var(--nx-line-1);
+    position: relative; overflow: hidden;
+  }
+  .tier::after{
+    content:""; position:absolute; inset:auto -30% -30% auto; width: 140px; height: 140px; border-radius: 50%;
+    filter: blur(28px); opacity: 0.45;
+  }
+  .t-bronze::after{ background:#C28A4B; }
+  .t-silver::after{ background:#D4D4D4; }
+  .t-gold::after  { background:#FFB800; }
+  .t-elite::after { background:#00FF88; }
+  .t-legend::after{ background:#B26BFF; }
+
+  .badge{
+    width: 56px; height: 64px;
+    background: linear-gradient(180deg, currentColor, color-mix(in oklab, currentColor 60%, black));
+    clip-path: polygon(50% 0, 100% 22%, 100% 78%, 50% 100%, 0 78%, 0 22%);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--nx-font-display); font-weight: 700; font-size: 24px;
+    color: #0B0B0B;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+  }
+  .name{ font-family: var(--nx-font-display); font-weight: 700; text-transform: uppercase; font-size: 16px; letter-spacing: 0.06em; color: var(--nx-fg-1); }
+  .ovr{ font-family: var(--nx-font-mono); font-size: 11px; color: var(--nx-fg-3); }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="tier t-bronze"><div class="badge" style="color:#C28A4B">B</div><div><div class="name">Bronze</div><div class="ovr">OVR &lt; 60</div></div></div>
+    <div class="tier t-silver"><div class="badge" style="color:#D4D4D4">S</div><div><div class="name">Silver</div><div class="ovr">60–69</div></div></div>
+    <div class="tier t-gold"><div class="badge" style="color:#FFB800">G</div><div><div class="name">Gold</div><div class="ovr">70–79</div></div></div>
+    <div class="tier t-elite"><div class="badge" style="color:#00FF88">E</div><div><div class="name">Elite</div><div class="ovr">80–89</div></div></div>
+    <div class="tier t-legend"><div class="badge" style="color:#B26BFF">L</div><div><div class="name">Legend</div><div class="ovr">90+</div></div></div>
+  </div>
+</div></body></html>

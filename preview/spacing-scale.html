@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Spacing scale</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .stack{ display:flex; flex-direction:column; gap: 8px; }
+  .row{ display:flex; align-items:center; gap: 14px; }
+  .bar{ height: 14px; background: var(--nx-accent); border-radius: 3px; box-shadow: 0 0 16px rgba(0,255,136,0.25); }
+  .name{ font-family: var(--nx-font-mono); font-size: 12px; color: var(--nx-fg-2); width: 90px; }
+  .px{ font-family: var(--nx-font-mono); font-size: 11px; color: var(--nx-fg-3); width: 38px; text-align:right; }
+</style></head>
+<body><div class="card">
+  <div class="stack">
+    <div class="row"><span class="name">--nx-s-1</span><span class="px">4</span><span class="bar" style="width:4px"></span></div>
+    <div class="row"><span class="name">--nx-s-2</span><span class="px">8</span><span class="bar" style="width:8px"></span></div>
+    <div class="row"><span class="name">--nx-s-3</span><span class="px">12</span><span class="bar" style="width:12px"></span></div>
+    <div class="row"><span class="name">--nx-s-4</span><span class="px">16</span><span class="bar" style="width:16px"></span></div>
+    <div class="row"><span class="name">--nx-s-5</span><span class="px">20</span><span class="bar" style="width:20px"></span></div>
+    <div class="row"><span class="name">--nx-s-6</span><span class="px">24</span><span class="bar" style="width:24px"></span></div>
+    <div class="row"><span class="name">--nx-s-8</span><span class="px">32</span><span class="bar" style="width:32px"></span></div>
+    <div class="row"><span class="name">--nx-s-10</span><span class="px">40</span><span class="bar" style="width:40px"></span></div>
+    <div class="row"><span class="name">--nx-s-14</span><span class="px">56</span><span class="bar" style="width:56px"></span></div>
+    <div class="row"><span class="name">--nx-s-20</span><span class="px">80</span><span class="bar" style="width:80px"></span></div>
+  </div>
+</div></body></html>

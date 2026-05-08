@@ -1,0 +1,59 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Chips & tabs</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .stack{ display:flex; flex-direction: column; gap: 18px; }
+  .row{ display:flex; gap: 8px; align-items:center; flex-wrap: wrap; }
+  .lbl{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nx-fg-3); width: 90px; }
+  .chip{
+    border-radius: 999px; padding: 7px 14px;
+    font-family: var(--nx-font-ui); font-weight: 600; font-size: 12px;
+    background: var(--nx-bg-3); color: var(--nx-fg-2); border: 1px solid var(--nx-line-1);
+    display:inline-flex; align-items:center; gap: 6px;
+  }
+  .chip.on{ background: var(--nx-accent); color: #001A0E; border-color: transparent; }
+  .chip.tier{ background: transparent; border: 1px solid currentColor; }
+  .chip .dot{ width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .tabs{
+    display:flex; gap: 0; background: var(--nx-bg-3); padding: 4px; border-radius: 999px;
+    border: 1px solid var(--nx-line-1); width: fit-content;
+  }
+  .tab{
+    padding: 8px 16px; border-radius: 999px;
+    font-family: var(--nx-font-ui); font-weight: 700; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--nx-fg-3); cursor: pointer;
+  }
+  .tab.on{ background: var(--nx-bg-1); color: var(--nx-fg-1); box-shadow: inset 0 0 0 1px var(--nx-line-2); }
+  .underline{ display:flex; gap: 24px; border-bottom: 1px solid var(--nx-line-1); padding-bottom: 8px; }
+  .ut{ font-family: var(--nx-font-display); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--nx-fg-3); position: relative; padding-bottom: 8px; }
+  .ut.on{ color: var(--nx-fg-1); }
+  .ut.on::after{ content:""; position:absolute; left: 0; right: 0; bottom: -9px; height: 2px; background: var(--nx-accent); box-shadow: 0 0 12px rgba(0,255,136,0.6); }
+</style></head>
+<body><div class="card">
+  <div class="stack">
+    <div class="row"><span class="lbl">Filter</span>
+      <span class="chip on">Tümü</span>
+      <span class="chip">Antrenman</span>
+      <span class="chip">Maç</span>
+      <span class="chip">Test</span>
+      <span class="chip" style="color: #FFB800; border-color: rgba(255,184,0,0.4);"><span class="dot"></span>Gold</span>
+      <span class="chip" style="color: #B26BFF; border-color: rgba(178,107,255,0.4);"><span class="dot"></span>Legend</span>
+    </div>
+    <div class="row"><span class="lbl">Pill tabs</span>
+      <div class="tabs">
+        <span class="tab on">Player</span>
+        <span class="tab">Team</span>
+        <span class="tab">Coach</span>
+      </div>
+    </div>
+    <div class="row"><span class="lbl">Underline</span>
+      <div class="underline" style="flex:1; gap: 28px;">
+        <span class="ut on">FORM</span>
+        <span class="ut">SESSIONS</span>
+        <span class="ut">MATCHES</span>
+        <span class="ut">REPORTS</span>
+      </div>
+    </div>
+  </div>
+</div></body></html>

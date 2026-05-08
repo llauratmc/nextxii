@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Semantic colors</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row{ display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; }
+  .sw{ height: 132px; border-radius: 12px; padding: 12px;
+    display:flex; flex-direction: column; justify-content: space-between;
+    border: 1px solid var(--nx-line-1); background: var(--nx-bg-2);
+  }
+  .dot{ width: 36px; height: 36px; border-radius: 999px; }
+  .meta{ display:flex; flex-direction: column; gap: 2px; }
+  .name{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 13px; color: var(--nx-fg-1); }
+  .role{ font-family: var(--nx-font-ui); font-weight: 500; font-size: 11px; color: var(--nx-fg-3); }
+  .hex{ font-family: var(--nx-font-mono); font-size: 10px; color: var(--nx-fg-3); margin-top: 2px; }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="sw"><div class="dot" style="background:#FFB800; box-shadow: 0 0 16px rgba(255,184,0,0.35);"></div><div class="meta"><span class="name">Gold</span><span class="role">MVP · trophy</span><span class="hex">#FFB800</span></div></div>
+    <div class="sw"><div class="dot" style="background:#FF5C2E; box-shadow: 0 0 16px rgba(255,92,46,0.35);"></div><div class="meta"><span class="name">Fire</span><span class="role">Streak · hot form</span><span class="hex">#FF5C2E</span></div></div>
+    <div class="sw"><div class="dot" style="background:#FF3B30;"></div><div class="meta"><span class="name">Crit</span><span class="role">Red card · neg</span><span class="hex">#FF3B30</span></div></div>
+    <div class="sw"><div class="dot" style="background:#4F8DFF;"></div><div class="meta"><span class="name">Ice</span><span class="role">Data · cool</span><span class="hex">#4F8DFF</span></div></div>
+    <div class="sw"><div class="dot" style="background:#B26BFF;"></div><div class="meta"><span class="name">Legend</span><span class="role">Top tier</span><span class="hex">#B26BFF</span></div></div>
+  </div>
+</div></body></html>

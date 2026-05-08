@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Foreground</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row{ display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; }
+  .sw{ background: var(--nx-bg-2); border:1px solid var(--nx-line-1); border-radius: 12px; padding: 14px; height: 132px; display:flex; flex-direction: column; justify-content: space-between; }
+  .swatch-text{ font-family: var(--nx-font-display); font-size: 38px; line-height: 1; font-weight: 600; }
+  .meta{ display:flex; flex-direction: column; gap: 2px; }
+  .name{ font-family: var(--nx-font-ui); font-weight: 700; font-size: 13px; color: var(--nx-fg-2); }
+  .hex{ font-family: var(--nx-font-mono); font-size: 11px; color: var(--nx-fg-3); }
+</style></head>
+<body><div class="card">
+  <div class="row">
+    <div class="sw"><span class="swatch-text" style="color:#FFFFFF">Aa</span><span class="meta"><span class="name">fg-1 · primary</span><span class="hex">#FFFFFF</span></span></div>
+    <div class="sw"><span class="swatch-text" style="color:#B8B8B8">Aa</span><span class="meta"><span class="name">fg-2 · body</span><span class="hex">#B8B8B8</span></span></div>
+    <div class="sw"><span class="swatch-text" style="color:#7A7A7A">Aa</span><span class="meta"><span class="name">fg-3 · meta</span><span class="hex">#7A7A7A</span></span></div>
+    <div class="sw"><span class="swatch-text" style="color:#4A4A4A">Aa</span><span class="meta"><span class="name">fg-4 · disabled</span><span class="hex">#4A4A4A</span></span></div>
+  </div>
+</div></body></html>
